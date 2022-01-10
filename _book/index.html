@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Data Curation Guidebook - The Social Life of Neighborhoods</title>
+  <meta name="description" content="This is a bookdown::gitbook site and PDF." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Data Curation Guidebook - The Social Life of Neighborhoods" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a bookdown::gitbook site and PDF." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Curation Guidebook - The Social Life of Neighborhoods" />
+  
+  <meta name="twitter:description" content="This is a bookdown::gitbook site and PDF." />
+  
+
+<meta name="author" content="Author: Francine Stephens" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="crosswalk.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="crosswalk.html"><a href="crosswalk.html"><i class="fa fa-check"></i><b>1</b> Neighborhood-Census Geographies Crosswalk</a></li>
+<li class="chapter" data-level="2" data-path="nhood.html"><a href="nhood.html"><i class="fa fa-check"></i><b>2</b> Neighborhood Boundaries</a></li>
+<li class="chapter" data-level="3" data-path="crime.html"><a href="crime.html"><i class="fa fa-check"></i><b>3</b> Crime Data</a></li>
+<li class="chapter" data-level="4" data-path="segregation.html"><a href="segregation.html"><i class="fa fa-check"></i><b>4</b> Segregation Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="segregation.html"><a href="segregation.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="segregation.html"><a href="segregation.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="gentrification.html"><a href="gentrification.html"><i class="fa fa-check"></i><b>5</b> Gentrification Data</a></li>
+<li class="chapter" data-level="6" data-path="immigration.html"><a href="immigration.html"><i class="fa fa-check"></i><b>6</b> Immigration Data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Curation Guidebook - The Social Life of Neighborhoods</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Data Curation Guidebook - The Social Life of Neighborhoods</h1>
+<p class="author"><em>Author: Francine Stephens</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered">
+<h1>Preface</h1>
+<p>Welcome to The Social Life of Neighborhoods! As the TA, you will be guiding students through the process of using and synthesizing spatial and quantitative data to create maps for their neighborhood assignments. The TA of this course also plays the important role of the <em>data curator</em>. When the TA prepares and provides the necessary data for the neighborhood assignments, the students are able to focus more on analyzing the data and drawing connections to the course readings to make sense of the patterns emerging in and around their neighborhoods. This makes for a smoother class experience for the students, TA, and professor!</p>
+<p>The responsibility of curating data for the class over multiple weeks of the quarter may seem a little daunting, but the good news is that you do not have to come up with a workflow from scratch. This guidebook along with the R scripts stored in the linked GitHub folder will walk you through the steps to automate a substantial amount of the work.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> The guidebook is organized in a series of chapters based on the course assignment and the data the students need from you to complete their assignment in ArcGIS Online. A brief description of each chapter is provided below:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Chapter 1</strong> covers Neighborhood Assignment #1 and the crucial steps to complete after students have submitted this assignment and before they begin their first mapping assignment.</li>
+<li><strong>Chapter 2</strong> covers how to create the ArcGIS Online class page and students’ neighborhood boundaries from the census tracts they submitted in Assignment #1 for the Neighborhood Organizations assignment.</li>
+<li><strong>Chapter 3</strong> covers the Theories of Crime/Social Disorder Assignment, which involves collecting and preparing the crime data.</li>
+<li><strong>Chapter 4</strong> covers the Segregation assignment and how to prepare data for the cities and metro areas/regions that contain the neighborhoods chosen by students.</li>
+<li><strong>Chapter 5</strong> covers the Gentrification assignment and how to prepare data for the city that contains the neighborhoods chosen by students.</li>
+<li><strong>Chapter 6</strong> covers the Globalization assignment and how to prepare the immigration data for the students’ neighborhoods and the city that contains their chosen neighborhood.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+</ol>
+<p>Each chapter will explain the key materials and steps that you need to know to curate the data, including the <strong>data sources</strong> needed for the assignment; a description of the <strong>key components of the R script</strong>; the specific <strong>parameters that need to updated in the script</strong> to run for your class; and the <strong>data/shapefiles that the script will output</strong> for you to upload to the ArcGIS Online class page for the students to use.</p>
+<p><br></p>
+<p><strong>Before You Start</strong></p>
+<p>Before diving into Chapter 1, download the code and boilerplate files from Francine’s public GitHub repository to your computer. The data and scripts within the GitHub repository folder will be referenced in the following chapters. <em>You do not need to set up a GitHub account/page</em> to run any of the scripts or save the exported data.</p>
+
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Some weeks, e.g., Crime Data, will require a little more manual data work on your part because the data are not coming from a single provider like the U.S. Census, and have different formats and attributes that you will have to standardize.<a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>This assignment was scratched for the 2021 Spring Quarter, so the data collection and preparation steps did not get a “real” test run, but the script and steps are still included in this guidebook to serve as boilerplate code and documentation for future TAs to build upon as needed.<a href="index.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="crosswalk.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["data_curation_guidebook.pdf", "data_curation_guidebook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

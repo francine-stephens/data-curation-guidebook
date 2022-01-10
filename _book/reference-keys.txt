@@ -1,0 +1,10 @@
+fig:nice-fig
+tab:nice-tab
+crosswalk
+nhood
+crime
+segregation
+example-one
+example-two
+gentrification
+immigration

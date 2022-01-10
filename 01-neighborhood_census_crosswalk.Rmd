@@ -1,0 +1,43 @@
+# Neighborhood-Census Geographies Crosswalk {#crosswalk}
+
+This chapter is fundamental to all of the data that you will curate during the quarter. It explains how to create the neighborhood-census geographies crosswalk, which is a master spreadsheet that links each student's neighborhood to census geographies that will be used later in the course, including census tracts, cities, and metropolitan statistical areas. This crosswalk file is for you and your future work, not the students, so you do not need to worry about sharing the crosswalk with students in the class. 
+
+<br>
+
+**When should you curate this data?** 
+After students have submitted assignment 1 - Neighborhood selection - and before Assignemnt #3 - the first mapping assignment in ArcGIS online. 
+
+<br>
+
+**What do you need to get started?** 
+The folder `nhood_shapes` contains the files and scripts that are relevant for creating the crosswalk spreadsheet. Specifically, you will want to view: 
+
+- x
+- y 
+- z 
+
+<br>
+
+**How to Prepare the Crosswalk**
+
+1. Copy the `student_neighborhoods_list.csv`
+
+
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+

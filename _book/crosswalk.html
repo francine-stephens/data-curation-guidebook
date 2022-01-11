@@ -134,7 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="crosswalk.html"><a href="crosswalk.html"><i class="fa fa-check"></i><b>1</b> Neighborhood-Census Geographies Crosswalk</a></li>
+<li class="chapter" data-level="1" data-path="crosswalk.html"><a href="crosswalk.html"><i class="fa fa-check"></i><b>1</b> Neighborhood-Census Geographies Crosswalk</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="crosswalk.html"><a href="crosswalk.html#when-should-you-curate-this-data"><i class="fa fa-check"></i><b>1.0.1</b> When should you curate this data?</a></li>
+<li class="chapter" data-level="1.0.2" data-path="crosswalk.html"><a href="crosswalk.html#what-do-you-need-to-get-started"><i class="fa fa-check"></i><b>1.0.2</b> What do you need to get started?</a></li>
+<li class="chapter" data-level="1.0.3" data-path="crosswalk.html"><a href="crosswalk.html#prepare-the-crosswalk"><i class="fa fa-check"></i><b>1.0.3</b> Prepare the Crosswalk</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="nhood.html"><a href="nhood.html"><i class="fa fa-check"></i><b>2</b> Neighborhood Boundaries</a></li>
 <li class="chapter" data-level="3" data-path="crime.html"><a href="crime.html"><i class="fa fa-check"></i><b>3</b> Crime Data</a></li>
 <li class="chapter" data-level="4" data-path="segregation.html"><a href="segregation.html"><i class="fa fa-check"></i><b>4</b> Segregation Data</a><ul>
@@ -165,192 +169,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="crosswalk" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Neighborhood-Census Geographies Crosswalk</h1>
-<p>This chapter is fundamental to all of the data that you will curate during the quarter. It explains how to create the neighborhood-census geographies crosswalk, which is a master spreadsheet that links each student’s neighborhood to census geographies that will be used later in the course, including census tracts, cities, and metropolitan statistical areas. This crosswalk file is for you and your future work, not the students, so you do not need to worry about sharing the crosswalk with students in the class.</p>
+<p>This chapter is fundamental to all of the data that you will curate during the quarter. It explains how to create the neighborhood-census geographies crosswalk, which is a master spreadsheet that links each student’s neighborhood to various census geographies - census tracts, cities, and metropolitan statistical areas - that will be used throughout the course. This crosswalk file is for you and your future data curation work, not the students. You do not need to share the crosswalk with students in the class.</p>
 <p><br></p>
-<p><strong>When should you curate this data?</strong>
-After students have submitted assignment 1 - Neighborhood selection - and before Assignemnt #3 - the first mapping assignment in ArcGIS online.</p>
+<div id="when-should-you-curate-this-data" class="section level3">
+<h3><span class="header-section-number">1.0.1</span> When should you curate this data?</h3>
+<p>Start creating the crosswalk <em>after students have submitted Assignment #1 and before the first mapping assignment</em> in ArcGIS online (this was Assignment #3 in Spring 2021). It would be the most efficient use of your time to curate this data <em>while</em> you are grading or reviewing Assignment #1, because some of the information that students include in this assignment is necessary for building the crosswalk file.</p>
 <p><br></p>
-<p><strong>What do you need to get started?</strong>
-The folder <code>nhood_shapes</code> contains the files and scripts that are relevant for creating the crosswalk spreadsheet. Specifically, you will want to view:</p>
-<ul>
-<li>x</li>
-<li>y</li>
-<li>z</li>
-</ul>
-<p><br></p>
-<p><strong>How to Prepare the Crosswalk</strong></p>
-<ol style="list-style-type: decimal">
-<li>Copy the <code>student_neighborhoods_list.csv</code></li>
-</ol>
-<p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="crosswalk.html#cb1-1"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</span>
-<span id="cb1-2"><a href="crosswalk.html#cb1-2"></a><span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
-<img src="data_curation_guidebook_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">
-Figure 1.1: Here is a nice figure!
-</p>
 </div>
-<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="crosswalk.html#fig:nice-fig">1.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="crosswalk.html#tab:nice-tab">1.1</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="crosswalk.html#cb2-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
-<span id="cb2-2"><a href="crosswalk.html#cb2-2"></a>  <span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb2-3"><a href="crosswalk.html#cb2-3"></a>  <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
-<span id="cb2-4"><a href="crosswalk.html#cb2-4"></a>)</span></code></pre></div>
-<table>
-<caption><span id="tab:nice-tab">Table 1.1: </span>Here is a nice table!</caption>
-<thead>
-<tr class="header">
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
-<th align="left">Species</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.7</td>
-<td align="right">3.2</td>
-<td align="right">1.3</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.6</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.0</td>
-<td align="right">3.6</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.7</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.6</td>
-<td align="right">3.4</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.0</td>
-<td align="right">3.4</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.4</td>
-<td align="right">2.9</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.7</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.8</td>
-<td align="right">3.4</td>
-<td align="right">1.6</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.8</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.3</td>
-<td align="right">3.0</td>
-<td align="right">1.1</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.8</td>
-<td align="right">4.0</td>
-<td align="right">1.2</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.7</td>
-<td align="right">4.4</td>
-<td align="right">1.5</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.3</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.7</td>
-<td align="right">3.8</td>
-<td align="right">1.7</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.8</td>
-<td align="right">1.5</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-</tbody>
-</table>
+<div id="what-do-you-need-to-get-started" class="section level3">
+<h3><span class="header-section-number">1.0.2</span> What do you need to get started?</h3>
+<p>The folder <code>nhood_shapes</code> contains the file and script that are relevant for creating the crosswalk spreadsheet. Specifically, you should open and view:</p>
+<ul>
+<li>the crosswalk file: <code>student_neighborhoods_list.csv</code></li>
+<li>the R script: <code>create_neighborhoods.rmd</code></li>
+<li>The documents students submitted for Assignment #1 on Canvas.</li>
+</ul>
+</div>
+<div id="prepare-the-crosswalk" class="section level3">
+<h3><span class="header-section-number">1.0.3</span> Prepare the Crosswalk</h3>
+<p><strong>Step 1. Copy the <code>student_neighborhoods_list.csv</code>.</strong></p>
+<p>This is the crosswalk file for the Spring 2021 quarter.</p>
+<div class="figure">
+<img src="images/neighborhood%20census%20geog%20cw.jpg" alt="" />
+<p class="caption">The neighborhood-census geography crosswalk</p>
+</div>
+<p><br></p>
+<p><em>Column Fields</em> - The first row is a header containing 8 fields that reflect the key pieces of information for the crosswalk. From left to right, the field names and what they represent are:</p>
+<ol style="list-style-type: decimal">
+<li>student - The student’s name.</li>
+<li>nhood_name - The name of the selected neighborhood that the student provides in Assignment #1.</li>
+<li>tract_id - The full 11 digit census tract identifier (FIPS code - state + county + tract identifiers) that the student identifies as being part of their neighborhood in Assignment #1.</li>
+<li>city - The name of the city where the student’s selected neighborhood is located.</li>
+<li>state_ab - The abbreviation of the state where the neighborhood and its city are located.</li>
+<li>place_id - The 7 digit place identifier for the census place (i.e., city) of the student’s chosen neighborhood.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+<li>metro_name - The name of the Census Metropolitan Statistical Area (MSA) where the neighborhood and its city are located.</li>
+<li>metro_id - The 7 digit identifier (FIPS code) for the Census Metropolitan Statistical Area (MSA).<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+</ol>
+<p><br></p>
+<p><em>Rows</em> - Each row in this spreadsheet represents student-neighborhood-census tract. In the example crosswalk file, some student and neighborhood names are on multiple rows. This is the case when the student selected more than one census tract to define their neighborhood boundaries in Assignment #1.</p>
+<p><br></p>
+<p><strong>Step 2. Clear the information in the rows below the header and replace with your students’ information provided in Assignment #1</strong></p>
+<p>In Assignment #1, the student will name the neighborhood, city, and state of the neighborhood site they choose to study for the quarter. They will also submit a document from the FFIEC Geocode Report that identifies the census tracts in the neighborhood that they have chosen as well as the metropolitan statistical area identifiers. An example image is shown below.</p>
+<p><img src="images/FFIEC%20Geocode%20Census%20Report.jpg" alt="FFIEC Geocode Report" />
+The numbers highlighted in <span style="color:#32cd32"><strong>green</strong></span> are the state identifier, county identifier, and tract identifier, respectively. Input them together in the third column. Do not include a decimal point in the tract code (the identifier only contains numbers).</p>
+<p>The text highlighted in <span style="color:#fada5e"><strong>yellow</strong></span> gives the metropolitan statistical area identifier - a 5 digit number - and the name of the metropolitan area, which belong in columns 7 and 8, respectively.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<p><br></p>
+<p>To obtain the place identifier, navigate to <a href="https://library.stanford.edu/all/?q=social+explorer&amp;op=Search">Social Explorer</a>. Select the <em>Tables</em> option in the left-sidebar menu and then navigate to any survey program (Decennial Census is fine). Select the <em>Place Geography</em> option and begin adding the city names provided by students to the drop-down menu as shown in the image below.</p>
+<div class="figure">
+<img src="images/Social%20Explorer%20Place%20Geographies.jpg" alt="" />
+<p class="caption">Social Explorer Geography Selection Page</p>
+</div>
+<p>Once you have added all of the cities to the selection, Proceed to the Tables page and export your results, with all geographic identifiers to a CSV. The CSV will have the place identifier in the first column as is highlighted in <span style="color:#00b7eb"><strong>blue</strong></span> in the image.</p>
+<p><br></p>
+<div class="figure">
+<img src="images/Social%20Explorer%20Download%20Place%20FIPS.jpg" alt="" />
+<p class="caption">Social Explorer Download with Place ID highlighted</p>
+</div>
+<p><strong>Important Note</strong>: Census geographic identifiers change over time. Therefore, it is important to make sure that the place and metropolitan statistical area geo-identifiers are for the same year as the census tracts. For instance, in the Spring 2021 quarter, the census tracts were still the 2010 boundaries/identifiers, so we used the 2010 boundaries and identifiers for the place and metropolitan statistical area geographies.</p>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>The first two digits of the place id are the census state code, which has leading zeros for the first nine states. The script will add the leading zeros that Excel/Google Sheets does not show.<a href="crosswalk.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>The first two digits of the place id are the census state code, which has leading zeros for the first nine states. The script will add the leading zeros that Excel/Google Sheets does not show. For the segregation assignment, you will use a geographic delineation of the Bay Area presented in the course readings, so do not worry about recording the census name or identifier. The script creates the geography for you.<a href="crosswalk.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Be sure to add the two digit state identifier before the 5 digit MSA identifier when you enter this information in column 7.<a href="crosswalk.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

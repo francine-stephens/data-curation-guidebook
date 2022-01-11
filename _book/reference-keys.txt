@@ -1,6 +1,9 @@
 fig:nice-fig
 tab:nice-tab
 crosswalk
+when-should-you-curate-this-data
+what-do-you-need-to-get-started
+prepare-the-crosswalk
 nhood
 crime
 segregation

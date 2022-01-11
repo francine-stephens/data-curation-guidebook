@@ -128,7 +128,7 @@
 
 Welcome to The Social Life of Neighborhoods! As the TA, you will be guiding students through the process of using and synthesizing spatial and quantitative data to create maps for their neighborhood assignments. The TA of this course also plays the important role of the \emph{data curator}. When the TA prepares and provides the necessary data for the neighborhood assignments, the students are able to focus more on analyzing the data and drawing connections to the course readings to make sense of the patterns emerging in and around their neighborhoods. This makes for a smoother class experience for the students, TA, and professor!
 
-The responsibility of curating data for the class over multiple weeks of the quarter may seem a little daunting, but the good news is that you do not have to come up with a workflow from scratch. This guidebook along with the R scripts stored in the linked GitHub folder will walk you through the steps to automate a substantial amount of the work.\footnote{Some weeks, e.g., Crime Data, will require a little more manual data work on your part because the data are not coming from a single provider like the U.S. Census, and have different formats and attributes that you will have to standardize.} The guidebook is organized in a series of chapters based on the course assignment and the data the students need from you to complete their assignment in ArcGIS Online. A brief description of each chapter is provided below:
+The responsibility of curating data for the class over multiple weeks of the quarter may seem a little daunting, but the good news is that you do not have to come up with a workflow from scratch. This guidebook along with the R scripts stored in the linked GitHub folder will walk you through the steps to automate a substantial amount of the work.\footnote{Some weeks, e.g., Crime Data, will require a little more manual data work on your part because the data are not coming from a single provider like the U.S. Census, and have different formats and attributes that you will have to standardize.} The guidebook is organized in a series of chapters based on the course assignment and the data the students need from you to complete their assignment in ArcGIS Online. A brief description of each chapter is provided in the list below:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -147,23 +147,106 @@ The responsibility of curating data for the class over multiple weeks of the qua
   \textbf{Chapter 6} covers the Globalization assignment and how to prepare the immigration data for the students' neighborhoods and the city that contains their chosen neighborhood.\footnote{This assignment was scratched for the 2021 Spring Quarter, so the data collection and preparation steps did not get a ``real'' test run, but the script and steps are still included in this guidebook to serve as boilerplate code and documentation for future TAs to build upon as needed.}
 \end{enumerate}
 
-Each chapter will explain the key materials and steps that you need to know to curate the data, including the \textbf{data sources} needed for the assignment; a description of the \textbf{key components of the R script}; the specific \textbf{parameters that need to updated in the script} to run for your class; and the \textbf{data/shapefiles that the script will output} for you to upload to the ArcGIS Online class page for the students to use.
+Each chapter will explain the key materials and steps that you need to curate the data, including the \textbf{data sources} needed for the assignment; a description of the \textbf{key components of the R script}; the specific \textbf{parameters that need to updated in the script} to run for your class; and the \textbf{data/shapefiles that the script will output} for you to upload to the ArcGIS Online class page for the students to use.
 
-\textbf{Before You Start}
+\textbf{Before You Begin}
 
 Before diving into Chapter 1, download the code and boilerplate files from Francine's public GitHub repository to your computer. The data and scripts within the GitHub repository folder will be referenced in the following chapters. \emph{You do not need to set up a GitHub account/page} to run any of the scripts or save the exported data.
 
 \hypertarget{crosswalk}{%
 \chapter{Neighborhood-Census Geographies Crosswalk}\label{crosswalk}}
 
-This chapter is fundamental to all of the data that you will curate during the quarter. It explains how to create the neighborhood-census geographies crosswalk, which is a master spreadsheet that links each student's neighborhood to census geographies that will be used later in the course, such as census tracts, cities, and metropolitan statistical areas. This crosswalk file is for you and your future work, not the students, so you do not need to worry about sharing the crosswalk with students in the class.
+This chapter is fundamental to all of the data that you will curate during the quarter. It explains how to create the neighborhood-census geographies crosswalk, which is a master spreadsheet that links each student's neighborhood to various census geographies - census tracts, cities, and metropolitan statistical areas - that will be used throughout the course. This crosswalk file is for you and your future data curation work, not the students. You do not need to share the crosswalk with students in the class.
 
-\textbf{When should you curate this data?}
-After students have submitted assignment 1 - Neighborhood selection - and before Assignemtn \#3 - the first mapping assignment in ArcGIS online.
+\hypertarget{when-should-you-curate-this-data}{%
+\subsection{When should you curate this data?}\label{when-should-you-curate-this-data}}
 
-\textbf{What do you need to get started?}
+Start creating the crosswalk \emph{after students have submitted Assignment \#1 and before the first mapping assignment} in ArcGIS online (this was Assignment \#3 in Spring 2021). It would be the most efficient use of your time to curate this data \emph{while} you are grading or reviewing Assignment \#1, because some of the information that students include in this assignment is necessary for building the crosswalk file.
 
-\textbf{How to Prepare the Crosswalk}
+\hypertarget{what-do-you-need-to-get-started}{%
+\subsection{What do you need to get started?}\label{what-do-you-need-to-get-started}}
+
+The folder \texttt{nhood\_shapes} contains the file and script that are relevant for creating the crosswalk spreadsheet. Specifically, you should open and view:
+
+\begin{itemize}
+\tightlist
+\item
+  the crosswalk file: \texttt{student\_neighborhoods\_list.csv}
+\item
+  the R script: \texttt{create\_neighborhoods.rmd}
+\item
+  The documents students submitted for Assignment \#1 on Canvas.
+\end{itemize}
+
+\hypertarget{prepare-the-crosswalk}{%
+\subsection{Prepare the Crosswalk}\label{prepare-the-crosswalk}}
+
+\textbf{Step 1. Copy the \texttt{student\_neighborhoods\_list.csv}.}
+
+This is the crosswalk file for the Spring 2021 quarter.
+
+\begin{figure}
+\centering
+\includegraphics{images/neighborhood census geog cw.jpg}
+\caption{The neighborhood-census geography crosswalk}
+\end{figure}
+
+\emph{Column Fields} - The first row is a header containing 8 fields that reflect the key pieces of information for the crosswalk. From left to right, the field names and what they represent are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  student - The student's name.
+\item
+  nhood\_name - The name of the selected neighborhood that the student provides in Assignment \#1.
+\item
+  tract\_id - The full 11 digit census tract identifier (FIPS code - state + county + tract identifiers) that the student identifies as being part of their neighborhood in Assignment \#1.
+\item
+  city - The name of the city where the student's selected neighborhood is located.
+\item
+  state\_ab - The abbreviation of the state where the neighborhood and its city are located.
+\item
+  place\_id - The 7 digit place identifier for the census place (i.e., city) of the student's chosen neighborhood.\footnote{The first two digits of the place id are the census state code, which has leading zeros for the first nine states. The script will add the leading zeros that Excel/Google Sheets does not show.}
+\item
+  metro\_name - The name of the Census Metropolitan Statistical Area (MSA) where the neighborhood and its city are located.
+\item
+  metro\_id - The 7 digit identifier (FIPS code) for the Census Metropolitan Statistical Area (MSA).\footnote{The first two digits of the place id are the census state code, which has leading zeros for the first nine states. The script will add the leading zeros that Excel/Google Sheets does not show. For the segregation assignment, you will use a geographic delineation of the Bay Area presented in the course readings, so do not worry about recording the census name or identifier. The script creates the geography for you.}
+\end{enumerate}
+
+\emph{Rows} - Each row in this spreadsheet represents student-neighborhood-census tract. In the example crosswalk file, some student and neighborhood names are on multiple rows. This is the case when the student selected more than one census tract to define their neighborhood boundaries in Assignment \#1.
+
+\textbf{Step 2. Clear the information in the rows below the header and replace with your students' information provided in Assignment \#1}
+
+In Assignment \#1, the student will name the neighborhood, city, and state of the neighborhood site they choose to study for the quarter. They will also submit a document from the FFIEC Geocode Report that identifies the census tracts in the neighborhood that they have chosen as well as the metropolitan statistical area identifiers. An example image is shown below.
+
+\includegraphics{images/FFIEC Geocode Census Report.jpg}
+The numbers highlighted in {\textbf{green}} are the state identifier, county identifier, and tract identifier, respectively. Input them together in the third column. Do not include a decimal point in the tract code (the identifier only contains numbers).
+
+The text highlighted in {\textbf{yellow}} gives the metropolitan statistical area identifier - a 5 digit number - and the name of the metropolitan area, which belong in columns 7 and 8, respectively.\footnote{Be sure to add the two digit state identifier before the 5 digit MSA identifier when you enter this information in column 7.}
+
+To obtain the place identifier, navigate to \href{https://library.stanford.edu/all/?q=social+explorer\&op=Search}{Social Explorer}. Select the \emph{Tables} option in the left-sidebar menu and then navigate to any survey program (Decennial Census is fine). Select the \emph{Place Geography} option and begin adding the city names provided by students to the drop-down menu as shown in the image below.
+
+\begin{figure}
+\centering
+\includegraphics{images/Social Explorer Place Geographies.jpg}
+\caption{Social Explorer Geography Selection Page}
+\end{figure}
+
+Once you have added all of the cities to the selection, Proceed to the Tables page and export your results, with all geographic identifiers to a CSV. The CSV will have the place identifier in the first column as is highlighted in {\textbf{blue}} in the image.
+
+\begin{figure}
+\centering
+\includegraphics{images/Social Explorer Download Place FIPS.jpg}
+\caption{Social Explorer Download with Place ID highlighted}
+\end{figure}
+
+\textbf{Important Note}: Census geographic identifiers change over time. Therefore, it is important to make sure that the place and metropolitan statistical area geo-identifiers are for the same year as the census tracts. For instance, in the Spring 2021 quarter, the census tracts were still the 2010 boundaries/identifiers, so we used the 2010 boundaries and identifiers for the place and metropolitan statistical area geographies.
+
+\hypertarget{nhood}{%
+\chapter{Neighborhood Boundaries}\label{nhood}}
+
+Assignment 2 or 3 (CHECK). Create neighborhood boundaries and export. Upload to ArcGIS Online.
 
 Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
 
@@ -228,11 +311,6 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\hypertarget{nhood}{%
-\chapter{Neighborhood Boundaries}\label{nhood}}
-
-Assignment 2 or 3 (CHECK). Create neighborhood boundaries and export. Upload to ArcGIS Online.
 
 \hypertarget{crime}{%
 \chapter{Crime Data}\label{crime}}
